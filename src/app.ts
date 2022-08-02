@@ -2,9 +2,11 @@
 //console.log("express + TS");
 
 import express, { Request, Response } from 'express';
-
+const cors = require('cors');
 const app = express();
 
+
+app.use(cors());
 app.use(express.json());
 
 
@@ -12,11 +14,6 @@ app.get("/", (req, res) => {
     return res.send("Hello Express!");
 });
 
-app.post("/api/product", (req, res) => {
-    console.log(req.body);
-
-    return res.send("Produto adicionado!");
-});
 
 
 
